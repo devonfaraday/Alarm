@@ -30,15 +30,6 @@ Students who complete this project independently are able to:
 
 Set up a basic List-Detail view hierarchy using a UITableViewController for a AlarmListTableViewController and a AlarmDetailTableViewController. Use the provided screenshots as a reference.
 
-1. Add a `UITableViewController` scene that will be used to list alarms
-2. Embed the scene in a `UINavigationController`
-3. Add an Add system bar button item to the navigation bar
-4. Add a class file `AlarmListTableViewController.swift` and assign the scene in the Storyboard
-5. Add a `UITableViewController` scene that will be used to add and view alarms
-    * note: We will use a static table view for our Alarm Detail view, static table views should be used sparingly, but they can be useful for a table view that will never change, such as a basic form. You can make a table view static by selecting the table view on the `UITableViewController`, going to the Attribute Inspector, and changing the content dropdown from Dynamic Prototypes to Static Cells.
-6. Add a show segue from the Add button from the first scene to the second scene.
-7. Add a show segue from the prototype cell form the first scene to the second scene.
-7. Add a class file `AlarmDetailTableViewController.swift` and assign the scene in the Storyboard
 
 ### Custom Table View Cell
 
@@ -46,14 +37,7 @@ Build a custom table view cell to display alarms. The cell should display the al
 
 It is best practice to make table view cells reusable between apps. As a result, you will build a `SwitchTableViewCell` rather than an `AlarmTableViewCell` that can be reused any time you want a cell with a switch. You will create outlets and actions from Interface Builder in this custom cell, and create an `alarm` property with a `didSet` observer used to populate the cell with details about the alarm.
 
-1. Add a new `SwitchTableViewCell.swift` as a subclass of UITableViewCell.
-2. Configure the prototype cell in the Alarm List Scene in `Main.storyboard` to be an instance of `SwitchTableViewCell`
-3. Design the prototype cell as shown in the screenshots: two labels, one above the other, with a switch to the right.
-    * note: Stack views are great. Think about using a horizontal stack view that has a vertical stack view inside of it, and a switch inside of it. Then the vertical stack view will have two labels in it
-4. Create an IBOutlet to the custom cell file for the label named `timeLabel`.
-5. Create an IBOutlet to the custom cell file for the label named `nameLabel`.
-5. Create an IBOutlet to the custom cell file for the switch named `alarmSwitch`.
-6. Create an IBAction for the switch named `switchValueChanged` which you will implement using a custom protocol later in these instructions.
+
 
 ### Static Table View
 

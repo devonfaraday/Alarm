@@ -2,36 +2,21 @@
 //  SwitchTableViewCell.swift
 //  Alarm
 //
-//  Created by James Pacheco on 5/10/16.
-//  Copyright © 2016 DevMountain. All rights reserved.
+//  Created by Christian McMullin on 2/6/17.
+//  Copyright © 2017 DevMountain. All rights reserved.
 //
 
 import UIKit
 
-protocol SwitchTableViewCellDelegate: class {
-	func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
-}
-
 class SwitchTableViewCell: UITableViewCell {
-	
-	@IBAction func switchValueChanged(_ sender: AnyObject) {
-		delegate?.switchCellSwitchValueChanged(cell: self)
-	}
-	
-	// MARK: Properties
-	
-	weak var delegate: SwitchTableViewCellDelegate?
-	
-	var alarm: Alarm? {
-		didSet {
-			guard let alarm = alarm else { return }
-			timeLabel.text = alarm.fireTimeAsString
-			nameLabel.text = alarm.name
-			alarmSwitch.isOn = alarm.enabled
-		}
-	}
-	
-	@IBOutlet weak var timeLabel: UILabel!
-	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var alarmSwitch: UISwitch!
+
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var alarmSwitch: UISwitch!
+   
+    
+    @IBAction func switchValueChange(_ sender: Any) {
+    }
+    
+    
 }
