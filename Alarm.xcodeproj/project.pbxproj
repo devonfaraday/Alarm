@@ -15,6 +15,8 @@
 		FDE00D4B1E4919BA00D8EDB8 /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE00D4A1E4919BA00D8EDB8 /* AlarmListTableViewController.swift */; };
 		FDE00D4D1E491AB100D8EDB8 /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE00D4C1E491AB100D8EDB8 /* AlarmDetailTableViewController.swift */; };
 		FDE00D4F1E491B2E00D8EDB8 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE00D4E1E491B2E00D8EDB8 /* SwitchTableViewCell.swift */; };
+		FDE00D511E4920C200D8EDB8 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE00D501E4920C200D8EDB8 /* Alarm.swift */; };
+		FDE00D531E492F0000D8EDB8 /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE00D521E492F0000D8EDB8 /* AlarmController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FDE00D4A1E4919BA00D8EDB8 /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
 		FDE00D4C1E491AB100D8EDB8 /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
 		FDE00D4E1E491B2E00D8EDB8 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		FDE00D501E4920C200D8EDB8 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		FDE00D521E492F0000D8EDB8 /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		1A0FB7C31CE2CD7F006808D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FDE00D521E492F0000D8EDB8 /* AlarmController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		1A0FB7C51CE2CD93006808D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FDE00D501E4920C200D8EDB8 /* Alarm.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 				FDE00D4F1E491B2E00D8EDB8 /* SwitchTableViewCell.swift in Sources */,
 				FDE00D4D1E491AB100D8EDB8 /* AlarmDetailTableViewController.swift in Sources */,
 				1A0FB7BF1CE19229006808D9 /* DateHelper.swift in Sources */,
+				FDE00D511E4920C200D8EDB8 /* Alarm.swift in Sources */,
+				FDE00D531E492F0000D8EDB8 /* AlarmController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

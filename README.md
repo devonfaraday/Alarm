@@ -43,18 +43,11 @@ It is best practice to make table view cells reusable between apps. As a result,
 
 Build a static table view as the detail view for creating and editing alarms.
 
-1. Static table views do not need to have UITableViewDataSource functions implemented. Instead, you can create outlets and actions from your prototype cells directly onto the view controller (in this case `AlarmDetailTableViewController`) as you would with other types of views.
-2. If you haven't already, go to your Storyboard, select your detail table view and in the Attribute Inspector change the style to grouped and the sections to 3.
-3. In section 1, drag a date picker onto the prototype cell and add proper constraints.
-4. In section 2, drag a text field onto the prototype cell and add the proper constraints and placeholder text.
-5. In section 3, drag a button onto the prototype cell and add the proper constraints and title. This button will be used to enable/disable existing alarms.
-6. Create IBOutlets for the three items listed above, and create and IBAction for the button titled `enableButtonTapped`.
-7. If you haven't already, add a bar button item to the right side of the navigation bar, change it to system item Save in the Attribute Inspector, and create an IBAction called `saveButtonTapped`.
-    * You will need to add a Navigation Item to the Navigation Bar before you can add the bar button.
+ Static table views do not need to have UITableViewDataSource functions implemented. Instead, you can create outlets and actions from your prototype cells directly onto the view controller (in this case `AlarmDetailTableViewController`) as you would with other types of views.
 
 ### Understanding Alarm Model Object
 
-You have been given a file called ```Alarm.swift``` that contains your Alarm model object. This model object makes extensive use of NSDates and NSDateComponents. Although we did not make you create this class from scratch, we expect you to understand why it was made and how each line of code works.
+You have been given a file called ``Alarm.swift`` that contains your Alarm model object. This model object makes extensive use of NSDates and NSDateComponents. Although we did not make you create this class from scratch, we expect you to understand why it was made and how each line of code works.
 
 Create an Alarm model class that will hold a fireTimeFromMidnight, name, an enabled property, and computed properties for fireDate and fireTimeAsString. The fireTimeFromMidnight property will store the time of day that the alarm should go off. The fireDate property will be used in part 2 of this project to schedule notifications to the user for the alarm, and the fireTimeAsString will be used to display the time of day that the alarm should go off.
 
@@ -68,33 +61,29 @@ Create an Alarm model class that will hold a fireTimeFromMidnight, name, an enab
 
 Create an `AlarmController` model object controller that will manage and serve `Alarm` objects to the rest of the application. 
 
-1. Create an `AlarmController.swift` file and define a new `AlarmController` class.
-2. Add an `alarms` array property with an empty array as a default value.
-5. Create an `addAlarm(fireTimeFromMidnight: TimeInterval, name: String)` function that creates an alarm, adds it to the `alarms` array, and returns the alarm.
-6. Create an `update(alarm: Alarm, fireTimeFromMidnight: TimeInterval, name: String)` function that updates an existing alarm's fire time and name.
-6. Create a `delete(alarm: Alarm)` function that removes the alarm from the `alarms` array
-    * note: There is no 'removeObject' function on arrays. You will need to find the index of the object and then remove the object at that index. Refer to documentation if you need to know how to find the index of an object.
-    * note: If you face a compiler error, you may need to check that you have properly implented the Equatable protocol for `Alarm` objects
-7. Create a static `shared` property which stores a shared instance. 
-    * note: Review the syntax for creating shared instance properties
-
 ### Controller Staged Data Using a Mock Data Function
 
 Add mock alarm data to the AlarmController. Once there is mock data, teams can serialize work, with some working on the views with visible data and others working on implementing the controller logic. This is a quick way to get objects visible so you can begin building the views.
 
 There are many ways to add mock data to model object controllers. We will do so using a computed property.
 
-1. Create a `mockAlarms:[Alarm]` computed property that holds a number of staged `Alarm` objects
-    * Initialize a small number of `Alarm` objects to return with varying properties
-2. When you want mock data, set self.alarms to self.mockAlarms in the initializer. Remove it when you no longer want mock data.
-    * note: If you have not added an initializer, add one.
+
 
 ### Wire up the Alarm List Table View and implement the property observer pattern on the `SwitchTableViewCell` class.
 
 Fill in the table view data source functions required to display the view.
 
-1. Add a property `var alarm: Alarm?` to your `SwitchTableViewCell` class.
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
 2. Add a `didSet` observer that updates the labels to the time and name of the alarm, and updates the `alarmSwitch.on` property so that the switch reflects the proper alarm `enabled` state.
+--------------------------------------------------------------------------------------------------------------
+
+
 2. On your `AlarmListTableViewController` fill in the two required `UITableViewDataSource` functions, using the `alarms` array from `AlarmController.sharedInstance`. In the `cellForRowAtIndexPath` data source function you will need to cast your dequeued cell as a `SwitchTableViewCell` and set the cell's `alarm` property, being sure it pass it the right alarm from the `alarms` array from `AlarmController.sharedInstance`.
 3. Implement the `UITableViewDataSource` `tableView(_:, commit:, forRowAt:)` method to enable swipe-to-delete. Be sure to call the appropriate `AlarmController` method before deleting the row.
     * At this point you should be able to run your project and see your table view populated with your mock alarms, displaying the proper switch state. You should also be able to delete rows, and segue to a detail view (this detail view won't actually display an alarm yet, but the segue should still occur). Also note that you can toggle the switch, but that the `enabled` property on the model object the cell is displaying isn't actually changing.
