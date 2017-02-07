@@ -14,14 +14,14 @@ class AlarmController {
     var alarms = [Alarm]()
     
     init() {
-        self.alarms = mockData
+        
     }
     
     
-    func addAlarm(fireTimeFromMidnight: TimeInterval, name: String) -> Alarm {
-        let newAlarm = Alarm(name: name, fireTimeFromMidnight: fireTimeFromMidnight)
-        alarms.append(newAlarm)
-        return newAlarm
+    func addAlarm(alarm: Alarm) -> Alarm {
+       
+        alarms.append(alarm)
+        return alarm
     }
     
     func update(alarm: Alarm, fireTimeFromMidnight: TimeInterval, name: String) {
@@ -38,8 +38,8 @@ class AlarmController {
     // MARK: - Properties
     
     var mockData: [Alarm] {
-        let alarm1 = Alarm(name: "Get Up Faggot", fireTimeFromMidnight: 153.0)
-        let alarm2 = Alarm(name: "Second Fake Alarm", fireTimeFromMidnight: 1341.0)
+        let alarm1 = Alarm(name: "Get Up Faggot", fireTimeFromMidnight: 25200 )
+        let alarm2 = Alarm(name: "Second Fake Alarm", fireTimeFromMidnight: 25200 )
         
         return [alarm1, alarm2]
     }

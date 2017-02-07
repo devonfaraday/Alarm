@@ -13,26 +13,26 @@
         <scene sceneID="gYP-UB-Kd1">
             <objects>
                 <tableViewController id="SrH-18-34W" customClass="AlarmListTableViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zRp-9p-wW3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="zRp-9p-wW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="50" id="axs-gq-knA" customClass="SwitchTableViewCell" customModule="Alarm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="68" id="axs-gq-knA" customClass="SwitchTableViewCell" customModule="Alarm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axs-gq-knA" id="cEM-ej-jaU">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ey-be-3NH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Ey-be-3NH">
+                                            <rect key="frame" x="0.0" y="17" width="375" height="31"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gOj-79-2xs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="318" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ6-4y-ELs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="326" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="318" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.5" id="iLA-lO-aHQ"/>
                                                             </constraints>
@@ -41,7 +41,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rise and Shine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JS-ab-qXo">
-                                                            <rect key="frame" x="0.0" y="21" width="326" height="10"/>
+                                                            <rect key="frame" x="0.0" y="21" width="318" height="10"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10.5" id="e8A-tm-57L"/>
                                                             </constraints>
@@ -66,7 +66,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="3Ey-be-3NH" firstAttribute="leading" secondItem="cEM-ej-jaU" secondAttribute="leading" id="1st-cN-Xjj"/>
-                                        <constraint firstItem="3Ey-be-3NH" firstAttribute="top" secondItem="cEM-ej-jaU" secondAttribute="top" id="n5u-Aw-C5H"/>
+                                        <constraint firstItem="3Ey-be-3NH" firstAttribute="top" secondItem="cEM-ej-jaU" secondAttribute="top" constant="17" id="n5u-Aw-C5H"/>
                                         <constraint firstAttribute="trailing" secondItem="3Ey-be-3NH" secondAttribute="trailing" id="rBH-7R-Q5W"/>
                                         <constraint firstAttribute="bottom" secondItem="3Ey-be-3NH" secondAttribute="bottom" id="wCh-Cu-Tgo"/>
                                     </constraints>
@@ -75,7 +75,7 @@
                                     <outlet property="alarmSwitch" destination="K3w-7n-l01" id="6fF-8X-BSS"/>
                                     <outlet property="nameLabel" destination="4JS-ab-qXo" id="qjr-eS-b3G"/>
                                     <outlet property="timeLabel" destination="iZ6-4y-ELs" id="Ofm-jl-xBl"/>
-                                    <segue destination="Sab-dr-4c8" kind="show" id="5dM-69-qeQ"/>
+                                    <segue destination="Sab-dr-4c8" kind="show" identifier="showDetail" id="5dM-69-qeQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,7 +87,7 @@
                     <navigationItem key="navigationItem" title="Alarms" id="hBN-x4-et2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8sF-PE-FSL">
                             <connections>
-                                <segue destination="Sab-dr-4c8" kind="show" id="Reh-hA-jRh"/>
+                                <segue destination="Sab-dr-4c8" kind="show" identifier="addAlarm" id="Reh-hA-jRh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -114,7 +114,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="phg-Kx-c7d">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="phg-Kx-c7d">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="508108452.34411299">
                                                         <!--2017-02-06 21:14:12 +0000-->
@@ -227,6 +227,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Reh-hA-jRh"/>
+        <segue reference="5dM-69-qeQ"/>
     </inferredMetricsTieBreakers>
 </document>

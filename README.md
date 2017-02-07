@@ -84,28 +84,15 @@ Fill in the table view data source functions required to display the view.
 --------------------------------------------------------------------------------------------------------------
 
 
-2. On your `AlarmListTableViewController` fill in the two required `UITableViewDataSource` functions, using the `alarms` array from `AlarmController.sharedInstance`. In the `cellForRowAtIndexPath` data source function you will need to cast your dequeued cell as a `SwitchTableViewCell` and set the cell's `alarm` property, being sure it pass it the right alarm from the `alarms` array from `AlarmController.sharedInstance`.
-3. Implement the `UITableViewDataSource` `tableView(_:, commit:, forRowAt:)` method to enable swipe-to-delete. Be sure to call the appropriate `AlarmController` method before deleting the row.
-    * At this point you should be able to run your project and see your table view populated with your mock alarms, displaying the proper switch state. You should also be able to delete rows, and segue to a detail view (this detail view won't actually display an alarm yet, but the segue should still occur). Also note that you can toggle the switch, but that the `enabled` property on the model object the cell is displaying isn't actually changing.
 
 ### Custom Protocol
 
-Write a protocol for the `SwitchTableViewCell` to delegate handling a toggle of the switch to the `AlarmListTableViewController`, adopt the protocol, and use the delegate function to mark the alarm as enabled or disabled, and reload the cell.
-
-1. Add a protocol named `SwitchTableViewCellDelegate` to the top of the `SwitchTableViewCell` class file
-2. Define a `switchCellSwitchValueChanged(cell: SwitchTableViewCell)` function
-3. Add a weak, optional delegate property on the SwitchTableViewCell, require the delegate to have adopted the delegate protocol 
-    * note: `weak var delegate: ButtonTableViewCellDelegate?`
-    * note: If the compiler throws an error, it is likely because your protocol must be restricted to class types.
-4. Update the `switchValueChanged(_:)` IBAction to check if a delegate is assigned, and if so, call the delegate protocol function
-5. Adopt the protocol in the `AlarmListTableViewController` class
-6. Implement the `switchCellSwitchValueChanged(cell:)` delegate function to capture the alarm as a variable, toggle alarm's enabled property and reload the table view.
 
 ### Wire up the Alarm Detail Table View
 
 Create functions on the detail table view controller to display an existing alarm and setup the view properly.
 
-1. Add an `alarm` property of type `Alarm?` to `AlarmDetailTableViewController`. This will hold an alarm if the view is displaying an existing alarm, and will be nil if the view is for creating a new alarm.
+
 2. Create a private `updateViews()` function that will populate the date picker and alarm title text field with the current alarm's date and title. This function that will hide the enable button if `self.alarm` is nil, and otherwise will set the enable button to say "Disable" if the alarm in `self.alarm` is enabled, and "Enable" if it is disabled. You may consider changing background color and font color properties as well to make the difference between the two button states clear.
 	*note: You must guard against the alarm being nil, or the view controller's view not yet being loaded and properly handle these cases.
 3. Create a `didSet` property observer on the `alarm` property that will call `updateViews()` when the alarm property changes.
