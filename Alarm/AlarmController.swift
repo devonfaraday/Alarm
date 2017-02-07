@@ -18,8 +18,8 @@ class AlarmController {
     }
     
     
-    func addAlarm(alarm: Alarm) -> Alarm {
-       
+    func addAlarm(fireTimeFromMidnight: TimeInterval, name: String) -> Alarm {
+        let alarm = Alarm(name: name, fireTimeFromMidnight: fireTimeFromMidnight)
         alarms.append(alarm)
         return alarm
     }

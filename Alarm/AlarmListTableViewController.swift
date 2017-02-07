@@ -17,12 +17,16 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? SwitchTableViewCell else { return SwitchTableViewCell() }
-        let alarm = AlarmController.shared.alarms[indexPath.row]
+       let alarm = AlarmController.shared.alarms[indexPath.row]
         
         
-        cell.nameLabel.text = alarm.name
-        cell.timeLabel.text = String(alarm.fireTimeAsString)
-        cell.alarmSwitch.isOn = alarm.enable
+//        cell.nameLabel.text = alarm.name
+//        cell.timeLabel.text = String(alarm.fireTimeAsString)
+//        cell.alarmSwitch.isOn = alarm.enable
+
+        cell.alarm = alarm
+        cell.delegate = self
+        
         
         return cell
     }
@@ -48,12 +52,13 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
         guard let indexRow = tableView.indexPathForSelectedRow,
             let destinationController = segue.destination as? AlarmDetailTableViewController else { return }
-            let alarm = AlarmController.shared.alarms[indexRow.row] 
         
-        if segue.identifier == "showDetail" {
-            destinationController.alarm = alarm
+        
+            destinationController.alarm = AlarmController.shared.alarms[indexRow.row]
+            
         }
         
     }

@@ -42,9 +42,8 @@ class AlarmDetailTableViewController: UITableViewController {
         if let alarm = alarm {
             AlarmController.shared.update(alarm: alarm, fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
         } else {
-            let newAlarm = Alarm(name: title, fireTimeFromMidnight: timeIntervalSinceMidnight)
-            AlarmController.shared.addAlarm(alarm: newAlarm)
-        
+            let alarm = AlarmController.shared.addAlarm(fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
+            self.alarm = alarm
         }
         
         let _ = navigationController?.popViewController(animated: true)
