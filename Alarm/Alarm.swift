@@ -19,6 +19,8 @@ class Alarm: NSObject, NSCoding {
     var enable: Bool
     let uuid: String
     
+    
+    
     init(name: String, fireTimeFromMidnight: TimeInterval, enable: Bool = true, uuid: String = UUID().uuidString) {
         self.name = name
         self.fireTimeFromMidnight = fireTimeFromMidnight
