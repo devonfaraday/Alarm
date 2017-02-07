@@ -31,7 +31,7 @@ class SwitchTableViewCell: UITableViewCell {
     // Possible errors
     var alarm: Alarm? {
         didSet {
-            timeLabel.text = String(describing: alarm?.fireTimeFromMidnight)
+            timeLabel.text = alarm?.fireTimeAsString
             nameLabel.text = alarm?.name
             guard let enable = alarm?.enable else { return }
             alarmSwitch.isOn = enable

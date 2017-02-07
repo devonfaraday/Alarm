@@ -12,13 +12,13 @@
         <!--Alarms-->
         <scene sceneID="gYP-UB-Kd1">
             <objects>
-                <tableViewController id="SrH-18-34W" customClass="AlarmListTableViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="SrH-18-34W" customClass="AlarmListTableViewController" customModule="NewAlarmName" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="zRp-9p-wW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="68" id="axs-gq-knA" customClass="SwitchTableViewCell" customModule="Alarm" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="68" id="axs-gq-knA" customClass="SwitchTableViewCell" customModule="NewAlarmName" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="axs-gq-knA" id="cEM-ej-jaU">
@@ -96,19 +96,19 @@
             </objects>
             <point key="canvasLocation" x="2248.8000000000002" y="238.83058470764618"/>
         </scene>
-        <!--Title-->
+        <!--Alarm Detail Table View Controller-->
         <scene sceneID="yXf-UM-NIX">
             <objects>
-                <tableViewController id="Sab-dr-4c8" customClass="AlarmDetailTableViewController" customModule="Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Sab-dr-4c8" customClass="AlarmDetailTableViewController" customModule="NewAlarmName" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="03f-R5-9xy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Section-1" id="27G-go-PjA">
+                            <tableViewSection headerTitle="" id="27G-go-PjA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="224" id="1N5-Y3-BrJ">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="224"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1N5-Y3-BrJ" id="S15-W9-i1L">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
@@ -131,10 +131,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Section-2" id="zbL-fW-K0g">
+                            <tableViewSection headerTitle="" id="zbL-fW-K0g">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WVp-Xr-aet">
-                                        <rect key="frame" x="0.0" y="337" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="295" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WVp-Xr-aet" id="urq-aV-6tV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -157,10 +157,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Section-3" id="8Me-WI-lR7">
+                            <tableViewSection headerTitle="" id="8Me-WI-lR7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="K3T-Yp-eSH">
-                                        <rect key="frame" x="0.0" y="438" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="375" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K3T-Yp-eSH" id="4MY-Gk-7Ch">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -190,7 +190,7 @@
                             <outlet property="delegate" destination="Sab-dr-4c8" id="EAF-Tx-HUu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="t0C-hO-4zK">
+                    <navigationItem key="navigationItem" id="t0C-hO-4zK">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="d5f-YJ-AMq">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="Sab-dr-4c8" id="Ypm-tP-vwq"/>
@@ -227,6 +227,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5dM-69-qeQ"/>
+        <segue reference="Reh-hA-jRh"/>
     </inferredMetricsTieBreakers>
 </document>

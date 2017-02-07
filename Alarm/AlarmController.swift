@@ -13,15 +13,10 @@ class AlarmController {
     static let shared = AlarmController()
     var alarms = [Alarm]()
     
-    init() {
-        
-    }
-    
-    
     func addAlarm(fireTimeFromMidnight: TimeInterval, name: String) -> Alarm {
-        let alarm = Alarm(name: name, fireTimeFromMidnight: fireTimeFromMidnight)
-        alarms.append(alarm)
-        return alarm
+        let newAlarm = Alarm(name: name, fireTimeFromMidnight: fireTimeFromMidnight)
+        alarms.append(newAlarm)
+        return newAlarm
     }
     
     func update(alarm: Alarm, fireTimeFromMidnight: TimeInterval, name: String) {
@@ -34,14 +29,7 @@ class AlarmController {
         alarms.remove(at: index)
     }
     
-    
     // MARK: - Properties
     
-    var mockData: [Alarm] {
-        let alarm1 = Alarm(name: "Get Up Faggot", fireTimeFromMidnight: 25200 )
-        let alarm2 = Alarm(name: "Second Fake Alarm", fireTimeFromMidnight: 25200 )
-        
-        return [alarm1, alarm2]
-    }
     
 }

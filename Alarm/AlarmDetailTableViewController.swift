@@ -28,6 +28,7 @@ class AlarmDetailTableViewController: UITableViewController {
             disableButton.setTitle("Enabled", for: .normal)
             disableButton.backgroundColor = .green
             
+            
         } else  {
             disableButton.setTitle("Disabled", for: .normal)
             disableButton.backgroundColor = .red
@@ -47,9 +48,7 @@ class AlarmDetailTableViewController: UITableViewController {
         }
         
         let _ = navigationController?.popViewController(animated: true)
-        
-        
-        
+    
     }
     
     private func updateViews() {
@@ -59,12 +58,13 @@ class AlarmDetailTableViewController: UITableViewController {
         nameLabel.text = alarm.name
         
         if alarm.enable {
-            disableButton.setTitle("Disable", for: UIControlState())
-            disableButton.backgroundColor = .red
+            disableButton.setTitle("Enabled", for: UIControlState())
+            disableButton.backgroundColor = .green
+            
             
         } else {
-            disableButton.setTitle("Enable", for: UIControlState())
-            disableButton.backgroundColor = .green
+            disableButton.setTitle("Disable", for: UIControlState())
+            disableButton.backgroundColor = .red
             
         }
         self.title = alarm.name
@@ -72,11 +72,3 @@ class AlarmDetailTableViewController: UITableViewController {
 
 }
 
-/*
- Fill in the `saveButtonTapped` function on the detail view so that you can add new alarms and edit existing alarms.
- 
- 1. Use `DateHelper.thisMorningAtMidnight` to find the time interval between this morning at midnight and the `datePicker.date`.
- 2. Unwrap `self.alarm` and if there is an alarm, call your `AlarmController.sharedInstance.updateAlarm` function and pass it the time interval you just created and the title from the title text field.
- 3. If there is no alarm, call your `AlarmController.sharedInstance.addAlarm` function to create and add a new alarm.
- * note: You should be able to run the project and have what appears to be a fully functional app. You should be able to add, edit, and delete alarms, and enable/disable alarms. We have not yet covered how to alert the user when time is up, so that part will not work yet, but we'll get there.
- */

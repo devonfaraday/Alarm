@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A0FB77B1CDD4F07006808D9 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0FB77B1CDD4F07006808D9 /* NewAlarmName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewAlarmName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0FB77E1CDD4F07006808D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A0FB7831CDD4F07006808D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A0FB7851CDD4F07006808D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		1A0FB77C1CDD4F07006808D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A0FB77B1CDD4F07006808D9 /* Alarm.app */,
+				1A0FB77B1CDD4F07006808D9 /* NewAlarmName.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A0FB77A1CDD4F07006808D9 /* Alarm */ = {
+		1A0FB77A1CDD4F07006808D9 /* NewAlarmName */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A0FB78D1CDD4F07006808D9 /* Build configuration list for PBXNativeTarget "Alarm" */;
+			buildConfigurationList = 1A0FB78D1CDD4F07006808D9 /* Build configuration list for PBXNativeTarget "NewAlarmName" */;
 			buildPhases = (
 				1A0FB7771CDD4F07006808D9 /* Sources */,
 				1A0FB7781CDD4F07006808D9 /* Frameworks */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = Alarm;
+			name = NewAlarmName;
 			productName = Alarm;
-			productReference = 1A0FB77B1CDD4F07006808D9 /* Alarm.app */;
+			productReference = 1A0FB77B1CDD4F07006808D9 /* NewAlarmName.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A0FB77A1CDD4F07006808D9 /* Alarm */,
+				1A0FB77A1CDD4F07006808D9 /* NewAlarmName */,
 			);
 		};
 /* End PBXProject section */
@@ -342,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A0FB78D1CDD4F07006808D9 /* Build configuration list for PBXNativeTarget "Alarm" */ = {
+		1A0FB78D1CDD4F07006808D9 /* Build configuration list for PBXNativeTarget "NewAlarmName" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A0FB78E1CDD4F07006808D9 /* Debug */,

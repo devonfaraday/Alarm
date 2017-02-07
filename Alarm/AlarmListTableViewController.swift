@@ -10,6 +10,12 @@ import UIKit
 
 class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AlarmController.shared.alarms.count
     }
@@ -17,14 +23,10 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? SwitchTableViewCell else { return SwitchTableViewCell() }
-       let alarm = AlarmController.shared.alarms[indexPath.row]
-        
-        
-//        cell.nameLabel.text = alarm.name
-//        cell.timeLabel.text = String(alarm.fireTimeAsString)
-//        cell.alarmSwitch.isOn = alarm.enable
+       
+    
 
-        cell.alarm = alarm
+        cell.alarm = AlarmController.shared.alarms[indexPath.row]
         cell.delegate = self
         
         
