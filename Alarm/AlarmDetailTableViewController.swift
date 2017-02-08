@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmDetailTableViewController: UITableViewController {
+class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,21 +17,35 @@ class AlarmDetailTableViewController: UITableViewController {
         
     }
     
-    var alarm: Alarm?
+    var alarm: Alarm? {
+        didSet {
+            if isViewLoaded {
+                updateViews()
+            } else {
+                loadView()
+                updateViews()
+            }
+            
+        }
+    }
     
     @IBOutlet weak var timePickerView: UIDatePicker!
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var disableButton: UIButton!
 
     @IBAction func enabledButtonTapped(_ sender: Any) {
-        if disableButton.backgroundColor == .red {
+        if let alarm = alarm {
+            if !alarm.enable {
+            alarm.enable = true
             disableButton.setTitle("Enabled", for: .normal)
             disableButton.backgroundColor = .green
-            
-            
+                scheduleUserNotifications(for: alarm)
         } else  {
+            alarm.enable = false
             disableButton.setTitle("Disabled", for: .normal)
             disableButton.backgroundColor = .red
+                cancelUserNotifications(for: alarm)
+            }
         }
     }
     
@@ -42,9 +56,11 @@ class AlarmDetailTableViewController: UITableViewController {
 
         if let alarm = alarm {
             AlarmController.shared.update(alarm: alarm, fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
+            cancelUserNotifications(for: alarm)
         } else {
             let alarm = AlarmController.shared.addAlarm(fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
             self.alarm = alarm
+            scheduleUserNotifications(for: alarm)
         }
         
         let _ = navigationController?.popViewController(animated: true)

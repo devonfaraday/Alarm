@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 class AlarmController {
     
@@ -53,8 +54,61 @@ class AlarmController {
         if let alarm = NSKeyedUnarchiver.unarchiveObject(withFile: persistencePath) {
             self.alarms = alarm as! [Alarm]
         }
-        
-        
+    }
+    
+    func toggleEnabled(alarm: Alarm) {
+        if alarm.enable {
+            alarm.enable = false
+        } else {
+            alarm.enable = true
+        }
     }
     
 }
+
+protocol AlarmScheduler {
+    func scheduleUserNotifications(for alarm: Alarm)
+    func cancelUserNotifications(for alarm: Alarm)
+}
+
+extension AlarmScheduler {
+    
+    func scheduleUserNotifications(for alarm: Alarm) {
+        let notificationContent = UNMutableNotificationContent()
+        let sound = UNNotificationSound.default()
+        notificationContent.title = "Wake up"
+        notificationContent.body = "You freaking awesome rad stud muffin"
+        notificationContent.sound = sound
+        
+        guard let fireDate = alarm.fireDate else { return }
+        let dateComponets = Calendar.current.dateComponents([.hour, .minute], from: fireDate)
+        let dateTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponets, repeats: false)
+        let request = UNNotificationRequest(identifier: alarm.uuid, content: notificationContent, trigger: dateTrigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            print("it didn't work you scumbag")
+        }
+    }
+    
+    func cancelUserNotifications(for alarm: Alarm) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [alarm.uuid])
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
